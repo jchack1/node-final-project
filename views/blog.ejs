@@ -1,0 +1,31 @@
+<!-- for loop based on medium article: https://medium.com/@andrewhartnett/tutorial-building-a-simple-blog-with-node-express-mongo-8e760630db74-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>undivided mind - blog</title>
+    <link rel="stylesheet" href="../css/blog-styles.css">
+</head>
+
+<% include partials/header-nav.ejs %>
+
+    <main>
+        
+        <h1>Blog</h1>
+
+        <!-- loop through all posts, render title and body on page-->
+        <% for(let i = 0; i < posts.length; i++) { %>
+            <article>
+                <h2><%= posts[i].title %></h2>
+                <p><%= posts[i].body %></p>
+            </article>
+        <% } %>
+
+
+
+    </main>
+
+    <% include partials/footer.ejs %>

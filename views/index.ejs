@@ -1,0 +1,44 @@
+<!-- Brad Traversy again for log in form-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>undivided mind - login</title>
+    <link rel="stylesheet" href="css/index-styles.css">
+</head>
+
+<% include partials/header-nav.ejs %>
+
+    <main>
+        
+        <section class="formsection"> 
+        <form id="login" action="/" method="post">
+            <fieldset>
+            <% include partials/messages.ejs %>
+                <legend id="legend-login">login</legend>
+
+                  
+                    <label for="email">email 
+                        <input type="text" name="email" id="email" value="<%= typeof email != 'undefined' ? email: '' %>"> 
+                    </label>
+
+                    <label for="password">password 
+                        <input type="password" name="password" id="password" value="<%= typeof password != 'undefined' ? password: '' %>">
+                    </label>
+
+                    <input type="submit" value="login" name="login-button" id="login-button">
+                
+            </fieldset>
+        </form>
+
+        <section class="register-section">
+            <label for="register-button">not a contributor?</label>
+            <a href="/register"><button id="register-button">register</button></a>
+        </section>
+    </section>
+    </main>
+
+    <% include partials/footer.ejs %>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>undivided mind - register</title>
+    <link rel="stylesheet" href="../css/register-styles.css">
+</head>
+
+<% include partials/header-nav.ejs %>
+
+    <main>
+        <% include partials/messages.ejs %>
+        <form id="register" action="/register" method="post">
+            <fieldset>
+                <legend id="legend-register">register</legend>
+
+                <section class="formsection">
+                    
+                    <!-- code inside value from Brad Traversy video, if value is not undefined, we want to display it in our view, otherwise it will be blank, this is for validation-->
+                    <label for="username">username* </label>
+                    <input type="text" name="username" id="username" value="<%= typeof username != 'undefined' ? username: '' %>" >
+                    
+
+                    <label for="email">email* </label>
+                    <input type="email" name="email" id="email" value="<%= typeof email != 'undefined' ? username: '' %>"> 
+                    
+
+                    <label for="password">password* <span class="forminstruction">(must be between 8-20 characters in length)</span></label>
+                    <input type="password" name="password" id="password" value="<%= typeof password != 'undefined' ? password: '' %>">
+                        
+                    
+                    <label for="confirmpassword">confirm password* </label>
+                    <input type="password" name="confirmpassword" id="confirmpassword" value="<%= typeof confirmpassword != 'undefined' ? confirmpassword: '' %>">
+                    
+                
+                    <p id="requiredfield">* indicates required field</p>
+                        
+                    <input type="submit" value="register" id="register-button-page2">
+                </section>
+
+            </fieldset>
+        </form>
+    </main> 
+
+    <% include partials/footer.ejs %>

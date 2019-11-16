@@ -1,0 +1,32 @@
+<!-- In this partial we are getting our errors array to render on on the page, if there is an error. We are looping through the errors array -->
+
+<!-- When I have time I would like to fix the css for the error messages, because they currently show up on one line, right after each other. I don't like this but it is low priority, and I am not using bootstrap like Brad Traversy is so this will take me some time to figure out. -->
+
+<% if(typeof errors != "undefined"){ %>
+    <% errors.forEach(function(error){ %>
+        <%= error.msg %>
+    <% }); %>
+<% }  %>
+
+
+<!-- here we are saying that if we have a success message that is not an empty string, to display our success message
+
+these messages are assigned in app.js
+
+do the same for error message below this, and then again for just showing an error-->
+
+<% if (success_msg != "") { %>
+    <%= success_msg %>
+<% } %>
+
+
+
+<% if (error_msg != "") { %>
+    <%= error_msg %>
+<% } %>
+
+
+
+<% if (error != "") { %>
+    <%= error %>
+<% } %>

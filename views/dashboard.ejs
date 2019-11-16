@@ -1,0 +1,41 @@
+<!-- medium article helped me here with the code as well, for adding a blog post https://medium.com/@andrewhartnett/tutorial-building-a-simple-blog-with-node-express-mongo-8e760630db74 -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>undivided mind - dashboard</title>
+    <link rel="stylesheet" href="../css/dashboard-styles.css">
+</head>
+
+<% include partials/header-nav.ejs %>
+
+    <main>
+        
+        <h1>Welcome, <%= user.username %>!</h1>
+
+        <button href="/logout" class="dashboard-logout-button">Logout</button>
+
+
+        <!-- user can post to blog upon log in-->
+        <!-- displaying a message to the page upon successful post to database-->
+
+        <% include partials/messages.ejs %>
+        
+        <form action="addPost" method="post">
+            <fieldset>
+                 <legend id="add-post-legend">Add blog post</legend>
+                    <label for="title">title: </label>
+                    <input type="text" name="title" id="title">
+
+                    <label for="blogbody">your post: </label>
+                    <textarea name="blogbody" id="blogbody"></textarea>
+                 <input type="submit" value="Add Post" class="add-post-button">
+             </fieldset>
+        </form>
+
+    </main>
+
+<% include partials/footer.ejs %>
